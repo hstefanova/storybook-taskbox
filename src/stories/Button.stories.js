@@ -1,8 +1,9 @@
-import MyButton from './Button.vue';
+import BaseButton from './Button.vue';
 
 export default {
   title: 'Example/Button',
-  component: MyButton,
+  component: BaseButton,
+
   argTypes: {
     backgroundColor: { control: 'color' },
     size: { control: { type: 'select', options: ['small', 'medium', 'large'] } },
@@ -11,8 +12,9 @@ export default {
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { MyButton },
-  template: '<my-button @onClick="onClick" v-bind="$props" />',
+  components: { BaseButton },
+  methods: onclick,
+  template: '<BaseButton @onClick="onClick" v-bind="$props" />',
 });
 
 export const Primary = Template.bind({});
